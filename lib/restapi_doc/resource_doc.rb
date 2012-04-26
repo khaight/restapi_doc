@@ -23,7 +23,7 @@ module RestApiDoc
     end
 
     # parse the controller
-    def parse_apidoc!(class_template, method_template)
+    def parse_apidoc
       lines = IO.readlines(@controller_location)
       begin
         @class_block, @function_blocks = ResourceDoc.parse_controller_doc(@name, lines)

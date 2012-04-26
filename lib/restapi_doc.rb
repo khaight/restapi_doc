@@ -7,7 +7,6 @@ require File.expand_path('../restapi_doc/config', __FILE__)
 require File.expand_path('../restapi_doc/railtie', __FILE__) if defined?(Rails)
 
 module RestApiDoc
-  puts "GOT HERE 1"
   VERSION = File.read(File.expand_path("../VERSION", File.dirname(__FILE__)))
   
   include Config
@@ -55,9 +54,7 @@ module RestApiDoc
   # Creates index template for all resources
   def generate_index_templates(resource_docs)
     restapi_config = YAML.load(File.read("#{config_dir}/restapi_doc.yml"))
-    class_template = IO.read(template_dir('_resource_header.html.haml'))
-    method_template = IO.read(template_dir('_resource_method.html.haml'))
-    resource_docs.each { |resource| resource.parse_apidoc!(class_template, method_template) }
+    resource_docs.each { |resource| resource.parse_apidoc }
     template = IO.read(template_dir('index.html.haml'))
     parsed = Haml::Engine.new(template).render(Object.new, :project_info => restapi_config, :resource_docs => resource_docs)
     File.open(temp_dir("index.html"), 'w') { |file| file.write parsed }
