@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kevin Haight"]
   s.date = "2012-04-26"
-  s.description = "Rest API doc generates an easy way to create a twitter style document for your RESTful interface.  \n                        Leveraging Twitter Bootstap to create an easy to read document for your RESTful api. "
+  s.description = "REST API doc generates an easy way to create a twitter style document for your RESTful interface.  \n                        Leveraging Twitter Bootstrap to create an easy to read document for your RESTful api. "
   s.email = "kevinjhaight@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE",
@@ -47,7 +47,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/alayho/restapi_doc"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.17"
-  s.summary = "Rest API doc generates an easy way to create a twitter style document for your RESTful interface"
+  s.summary = "REST API doc generates an easy way to create a twitter style document for your RESTful interface"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
