@@ -16,6 +16,34 @@ Gem::Specification.new do |s|
     "LICENSE",
     "README.rdoc"
   ]
+  s.files = [
+    "Gemfile",
+    "Gemfile.lock",
+    "LICENSE",
+    "README.rdoc",
+    "Rakefile",
+    "VERSION",
+    "lib/restapi_doc.rb",
+    "lib/restapi_doc/config.rb",
+    "lib/restapi_doc/config/restapi_doc.yml",
+    "lib/restapi_doc/method_doc.rb",
+    "lib/restapi_doc/railtie.rb",
+    "lib/restapi_doc/resource_doc.rb",
+    "lib/restapi_doc/tasks/restapi_doc_tasks.rake",
+    "lib/restapi_doc/template/assets/css/bootstrap-responsive.min.css",
+    "lib/restapi_doc/template/assets/css/bootstrap.less",
+    "lib/restapi_doc/template/assets/css/bootstrap.min.css",
+    "lib/restapi_doc/template/assets/css/prettify.css",
+    "lib/restapi_doc/template/assets/img/glyphicons-halflings-white.png",
+    "lib/restapi_doc/template/assets/img/glyphicons-halflings.png",
+    "lib/restapi_doc/template/assets/js/bootstrap.min.js",
+    "lib/restapi_doc/template/assets/js/jquery.js",
+    "lib/restapi_doc/template/assets/js/less.min.js",
+    "lib/restapi_doc/template/assets/js/prettify.js",
+    "lib/restapi_doc/template/detail.html.haml",
+    "lib/restapi_doc/template/index.html.haml",
+    "restapi_doc.gemspec"
+  ]
   s.homepage = "http://github.com/alayho/restapi_doc"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.17"
