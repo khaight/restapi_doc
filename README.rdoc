@@ -20,6 +20,39 @@ In this directory you will now have a "restapi_doc.yml' file with some simple co
 == Documenting controllers
 Below is a sample of how to document the controller to generate a document
 
+        # =begin apidoc
+        # method:: POST
+        # requires_authentication:: Yes
+        # response_format:: json
+        # response_format:: xml
+        # param:: Name - string - required - Users name
+        # param:: Email - string - required - Users email address
+        # param:: Password - string - required - Users password.
+        #
+        # http_response:: 201 - Created - Returns user object
+        # http_response:: 401 - Not Authorized - Not authorized
+        # http_response:: 422 - Unprocessable Entity - Unable to process parameters
+        #
+        # request:: json
+        # {
+        #  "name":"Linda Clarkson",
+        #  "email":"athatcher@yahoo.com",
+        #  "password":"Hl108dLpSr"
+        # }
+        # ::request-end::
+        #
+        # output:: json
+        # {
+        #    "_id":"4f9778fe4736df029c000003",
+        #    "created_at":"2012-04-24T21:09:34-07:00",
+        #    "email":"athatcher@yahoo.com",
+        #    "name":"Linda Clarkson"
+        # }
+        # ::output-end::
+        #
+        #
+        # Creates a new user
+        # =end
 
 == Creating Api Document
 
