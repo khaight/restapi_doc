@@ -5,9 +5,9 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "restapi_doc"
-    gem.summary = %Q{Rest API doc generates an easy way to create a twitter style document for your RESTful interface}
-    gem.description = %Q{Rest API doc generates an easy way to create a twitter style document for your RESTful interface.  
-                        Leveraging Twitter Bootstap to create an easy to read document for your RESTful api. }
+    gem.summary = %Q{REST API doc generates an easy way to create a twitter style document for your RESTful interface}
+    gem.description = %Q{REST API doc generates an easy way to create a twitter style document for your RESTful interface.  
+                        Leveraging Twitter Bootstrap to create an easy to read document for your RESTful api. }
     gem.email = "kevinjhaight@gmail.com"
     gem.homepage = "http://github.com/alayho/restapi_doc"
     gem.authors = ["Kevin Haight"]
