@@ -9,12 +9,12 @@ Leveraging Twitter Bootstap to create an easy to read document for your RESTful 
         gem install restapi_doc
 
 == Set Up
-Run the following rake command to setup your environment
+Run the following rake command to setup your environment.
 
-		rake restapi_doc:generate
+        rake restapi_doc:generate
 		
 This will create a 'restapi_doc' directory in your Rails config directory.
-In this directory you will now have a "restapi_doc.yml' file with some simple configuration options for your API document
+In this directory you will now have a "restapi_doc.yml' file with some simple configuration options for your API document.
 
 
 == Documenting controllers
@@ -23,6 +23,6 @@ Below is a sample of how to document the controller to generate a document
 
 == Creating Api Document
 
-		rake restapi_doc:generate
+        rake restapi_doc:generate
 		
 You will now have a 'apidoc' directory located in your Rails 'public' directory
