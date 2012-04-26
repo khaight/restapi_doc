@@ -1,0 +1,107 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", "content" => "width=device-width, initial-scale=1.0"}/
+    %meta{:description => ""}/
+    %meta{:author => ""}/
+    %link{:href => "../../assets/css/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "../../assets/css/bootstrap-responsive.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "../../assets/css/prettify.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "../../assets/ico/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "../../assets/ico/apple-touch-icon-114-precomposed.png", :rel => "apple-touch-icon-precomposed", :size => "114x114"}/
+    %link{:href => "../../assets/ico/apple-touch-icon-72-precomposed.png", :rel => "apple-touch-icon-precomposed", :size => "72x72"}/
+    %link{:href => "../../assets/ico/apple-touch-icon-57-precomposed.png", :rel => "apple-touch-icon-precomposed"}/
+    %style
+      body{padding-top:60px;padding-bottom: 40px;}
+    %title #{project_info['project_name']} - RESTful API Doc
+  %body{"onload" => "prettyPrint();"}
+    %div{:class => "navbar navbar-fixed-top"}
+      %div{:class => "navbar-inner"}
+        .container
+          %a{:class => "btn btn-navbar", "data-toggle" => "collapse", "data-target" => "nav-collapse"}
+            %span{:class => "icon-bar"}
+            %span{:class => "icon-bar"}
+            %span{:class => "icon-bar"}
+          %a{:class => "brand"}
+            = "#{project_info['project_name']}"
+          %div{:class => "nav-collapse"}
+            %ul{:class=> "nav"}
+              %li{:class => "active"}
+                %a{:href => "../../index.html"}
+                  = "RESTful Resources"
+    %div{:class => "container"}
+      %h1{:style => "margin-bottom:20px;"} #{rmethod[1]} #{rmethod[2].gsub(/\(.*\)/, '')}
+      %div{:class => "row-fluid"}
+        %div{:class => "span9"}
+          %p #{rmethod[3].content unless rmethod[3].nil?}
+          %hr
+          %h4{:style => "margin-bottom:10px;"} Resource URL
+          %p #{project_info['base_url']}#{rmethod[2].gsub(/\(.*\)/, '')}
+          - if !rmethod[3].nil?
+            %h4{:style => "margin-top:30px;"} Parameters
+            %table{:class => "table"}
+              %tbody
+                - rmethod[3].params.each do |param|
+                  %tr
+                    %td{:style => "width:35%"} 
+                      = "#{param.split('-')[0].strip} (#{param.split('-')[1].strip})"
+                      %span{:class => "muted", :style => "display:block;font-size:12px;"} #{param.split('-')[2].strip.downcase}
+                    %td #{param.split('-')[3].strip}
+          %hr
+          - if !rmethod[3].nil?
+            %h4{:style => "margin-bottom:10px;"} HTTP Status Codes
+            %table{:class => "table"}
+              %tbody
+                - rmethod[3].http_responses.each do |httpresp|
+                  %tr
+                    %td
+                      = "#{httpresp.split('-')[0].strip}"
+                      %span{:class => "muted", :style => "display:block;font-size:12px;"} #{httpresp.split('-')[1].strip}
+                    %td #{httpresp.split('-')[2].strip}
+          %hr
+          %h4{:style=> "margin-bottom:10px;"} Examples
+          -if !rmethod[3].nil?
+            - if !rmethod[3].request_url.nil?
+              %h5{:style => "margin-bottom:10px;"} Request URL
+              %blockquote
+                %p{:style => "font-size:12px;"} #{project_info['base_url']}#{rmethod[3].request_url}
+          - if !rmethod[3].nil?
+            - if !rmethod[3].request.empty?
+              %h5{:style => "margin-bottom:10px;"} Request
+              %pre{:class => "prettyprint linenums"} #{rmethod[3].request unless rmethod[3].nil?}
+          - if !rmethod[3].nil?
+            - if !rmethod[3].output.empty?
+              %h5{:style => "margin-bottom:10px;"} Response
+              %pre{:class => "prettyprint linenums"} #{rmethod[3].output unless rmethod[3].nil?}
+
+        %div{:class => "span3"}
+          %div{:class => "well"}
+            %h4 Resource Information
+            %table{:class=> "table table-condensed"}
+              %thead
+                %tr
+                  %th
+              %tbody
+                %tr
+                  %td Category
+                  %td #{name}
+                %tr
+                  %td Requires Authentication?
+                  %td #{rmethod[3].requires_authentication unless rmethod[3].nil?}
+                %tr
+                  %td Requires Account Password?
+                  %td #{rmethod[3].account_password_required unless rmethod[3].nil?}
+                %tr
+                  %td Response Formats
+                  %td 
+                    - if !rmethod[3].nil?
+                      - rmethod[3].response_formats.each do |rf| 
+                        %span #{rf}
+                %tr
+                  %td HTTP Method
+                  %td #{rmethod[1]}
+
+
+    %script{:src => "../../assets/js/jquery.js", :type => "text/javascript"}
+    %script{:src => "../../assets/js/bootstrap.min.js", :type => "text/javascript"}
+    %script{:src => "../../assets/js/prettify.js", :type => "text/javascript"}

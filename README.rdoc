@@ -1,0 +1,11 @@
+= Rest Api Doc
+
+Rest API doc generates an easy way to create a twitter style document for your RESTful interface
+
+Leveraging Twitter Bootstap to create an easy to read document for your RESTful api.
+
+== Installing the gem
+	
+	gem install restapi_doc
+
+== How to use
