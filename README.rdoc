@@ -6,6 +6,6 @@ Leveraging Twitter Bootstap to create an easy to read document for your RESTful 
 
 == Installing the gem
 	
-	gem install restapi_doc
+		gem install restapi_doc
 
 == How to use
