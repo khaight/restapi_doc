@@ -15,9 +15,14 @@ Run the following rake command to setup your environment.
 		
 This will create a 'restapi_doc' directory in your Rails config directory.
 In this directory you will now have a "restapi_doc.yml' file with some simple configuration options for your API document.
+== Documenting Controller class
+Below is a sample of how to document a class.
 
+        # =begin apidoc
+	# Description of class
+        # =end
 
-== Documenting controllers
+== Documenting controllers methods
 Below is a sample of how to document the controller to generate a document
 
         # =begin apidoc
@@ -53,6 +58,7 @@ Below is a sample of how to document the controller to generate a document
         #
         # Creates a new user
         # =end
+
 
 == Creating Api Document
 
