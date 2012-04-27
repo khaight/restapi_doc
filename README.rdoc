@@ -18,8 +18,8 @@ In this directory you will now have a "restapi_doc.yml' file with some simple co
 == Documenting Controller class
 Below is a sample of how to document a class.
 
-        # =begin apidoc
-	# Description of class
+	# =begin apidoc
+        # Description of class
         # =end
 
 == Documenting controllers methods
