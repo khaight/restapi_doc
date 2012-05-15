@@ -26,9 +26,14 @@ module RestApiDoc
     routes = Dir.chdir(::Rails.root.to_s) { `rake routes` }
     routes.split("\n").each do |entry|
       method, url, controller_action = entry.split.slice(-3, 3)
-      controller, action = controller_action.split('#')
-      controller_info[controller] ||= []
-      controller_info[controller] << [action, method, url]
+      begin
+        if method.downcase != "root"
+          controller, action = controller_action.split('#')
+          controller_info[controller] ||= []
+          controller_info[controller] << [action, method, url]
+        end
+      rescue
+      end
     end
     controller_info
   end
