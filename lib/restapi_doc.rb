@@ -11,6 +11,9 @@ module RestApiDoc
   
   include Config
   include FileUtils
+
+  # valid api methods
+  METHODS = ["GET", "PUT", "DELETE", "POST"] 
   
   def create_structure
     File.directory?(config_dir) || mkdir(config_dir)
@@ -25,9 +28,9 @@ module RestApiDoc
     controller_info = {}
     routes = Dir.chdir(::Rails.root.to_s) { `rake routes` }
     routes.split("\n").each do |entry|
-      method, url, controller_action = entry.split.slice(-3, 3)
       begin
-        if method.downcase != "root"
+        method, url, controller_action = entry.split.slice(-3, 3)
+        if METHODS.include? method.upcase
           controller, action = controller_action.split('#')
           controller_info[controller] ||= []
           controller_info[controller] << [action, method, url]

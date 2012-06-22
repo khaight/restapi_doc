@@ -10,4 +10,8 @@ Updated README.rdoc to show example of how to document a controller
 Fixed bug #3 - While reading routes when controller is nil.
 Fixed bug #2 - Omitted routes where method is root.
 
+=== Version 0.0.4
+
+Fixed bug #4 - Fails when method is not valid HTTP method in routes
+
 
