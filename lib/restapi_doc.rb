@@ -13,7 +13,7 @@ module RestApiDoc
   include FileUtils
 
   # valid api methods
-  METHODS = ["GET", "PUT", "DELETE", "POST"] 
+  METHODS = ["GET", "PUT", "DELETE", "POST", "PATCH", "SEARCH"] 
   
   def create_structure
     File.directory?(config_dir) || mkdir(config_dir)
