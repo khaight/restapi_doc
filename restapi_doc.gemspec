@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kevin Haight"]
-  s.date = "2012-06-22"
+  s.date = "2014-08-19"
   s.description = "REST API doc generates an easy way to create a twitter style document for your RESTful interface.  \n                        Leveraging Twitter Bootstrap to create an easy to read document for your RESTful api. "
   s.email = "kevinjhaight@gmail.com"
   s.extra_rdoc_files = [
